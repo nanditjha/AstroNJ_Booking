@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AstroNJ Astrology – Kundali Booking</title>
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #1a0b2e, #3e206d);
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    header h1 {
+      font-size: 2.2em;
+      color: #ffce54;
+      letter-spacing: 1px;
+    }
+
+    header p {
+      font-size: 1.1em;
+      color: #e6e6e6;
+    }
+
+    section.services {
+      max-width: 600px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 0 15px rgba(255,255,255,0.1);
+    }
+
+    .service {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .service:last-child {
+      border-bottom: none;
+    }
+
+    .service-name {
+      font-weight: 500;
+    }
+
+    .price {
+      color: #ffce54;
+    }
+
+    form {
+      max-width: 600px;
+      margin: 30px auto;
+      background: rgba(255,255,255,0.08);
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(255,255,255,0.1);
+    }
+
+    form input, form select, form textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 8px;
+      font-size: 1em;
+    }
+
+    form input:focus, form textarea:focus {
+      outline: 2px solid #ffce54;
+      background-color: #fff;
+      color: #000;
+    }
+
+    .book-btn {
+      background-color: #ffce54;
+      color: #1a0b2e;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      width: 100%;
+      transition: 0.3s;
+    }
+
+    .book-btn:hover {
+      background-color: #ffd978;
+    }
+
+    footer {
+      text-align: center;
+      margin: 40px 0;
+      color: #cfcfcf;
+    }
+
+    footer a {
+      color: #ffce54;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🔮 AstroNJ Astrology</h1>
+    <p>Vedic Guidance • Kundali • Career • Matchmaking • Puja</p>
+  </header>
+
+  <section class="services">
+    <div class="service">
+      <span class="service-name">Kundali Reading</span>
+      <span class="price">₹999</span>
+    </div>
+    <div class="service">
+      <span class="service-name">Career Astrology</span>
+      <span class="price">₹699</span>
+    </div>
+    <div class="service">
+      <span class="service-name">Matchmaking</span>
+      <span class="price">₹999</span>
+    </div>
+    <div class="service">
+      <span class="service-name">Yearly Subscription</span>
+      <span class="price">₹5,999</span>
+    </div>
+    <div class="service">
+      <span class="service-name">Puja, Yagya & Havan Pariseba</span>
+      <span class="price">On Request</span>
+    </div>
+  </section>
+
+  <form id="bookingForm">
+    <h2 style="text-align:center; color:#ffce54;">Book Your Kundali Reading</h2>
+    <input type="text" id="name" placeholder="Full Name" required>
+    <input type="date" id="dob" placeholder="Date of Birth" required>
+    <input type="time" id="tob" placeholder="Time of Birth">
+    <input type="text" id="place" placeholder="Place of Birth">
+    <textarea id="notes" placeholder="Any specific question or details..." rows="3"></textarea>
+    <button type="button" class="book-btn" onclick="sendToWhatsApp()">📲 Book Now via WhatsApp</button>
+  </form>
+
+  <footer>
+    <p>📞 WhatsApp: <a href="https://wa.me/917001878705" target="_blank">+91 7001878705</a></p>
+    <p>📸 Instagram: <a href="https://www.instagram.com/astronj_astrology" target="_blank">@astronj_astrology</a></p>
+    <p>© 2025 AstroNJ Astrology. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    function sendToWhatsApp() {
+      let name = document.getElementById("name").value;
+      let dob = document.getElementById("dob").value;
+      let tob = document.getElementById("tob").value;
+      let place = document.getElementById("place").value;
+      let notes = document.getElementById("notes").value;
+
+      let message = `🌟 *Kundali Booking Request* 🌟%0A
+*Name:* ${name}%0A
+*Date of Birth:* ${dob}%0A
+*Time of Birth:* ${tob}%0A
+*Place of Birth:* ${place}%0A
+*Details:* ${notes}`;
+
+      let whatsappUrl = `https://wa.me/917001878705?text=${message}`;
+      window.open(whatsappUrl, "_blank");
+    }
+  </script>
+</body>
+</html>
